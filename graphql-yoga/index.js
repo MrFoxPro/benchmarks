@@ -8,6 +8,7 @@ if (cluster.isPrimary) {
   for (let i = 0; i < cpus().length; i++) {
     cluster.fork();
   }
+  
 } else {
   const yoga = createYoga({
     schema: createSchema({
