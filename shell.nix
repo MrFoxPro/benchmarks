@@ -23,8 +23,8 @@ pkgs.mkShell {
     psmisc
     nim
     bun
-    # crystal
-    # shards
+    crystal
+    shards
   ];
 
   shellHook = ''
