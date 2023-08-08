@@ -2,6 +2,7 @@ import cluster from "cluster";
 import { cpus } from "os";
 import { createSchema, createYoga } from "graphql-yoga";
 import { createServer } from "node:http";
+import { useGraphQlJit } from "@envelop/graphql-jit";
 
 if (cluster.isPrimary) {
   for (let i = 0; i < cpus().length; i++) {
@@ -22,6 +23,9 @@ if (cluster.isPrimary) {
       },
     }),
     logging: false,
+    plugins: [
+      useGraphQlJit(),
+    ],
   });
 
   const server = createServer(yoga);

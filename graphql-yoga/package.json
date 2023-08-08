@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "graphql-yoga": "~3.9.0"
+    "@envelop/graphql-jit": "^6.0.1",
+    "graphql-yoga": "^4.0.3"
   },
   "type": "module"
 }
